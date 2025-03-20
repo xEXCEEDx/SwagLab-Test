@@ -1,0 +1,9 @@
+datasources:df8b6289a7af1be89dace31b2a7d05722ad7c19e
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+suitesfrom:no-suites-from-option
+file:a964ab784317a13ba3c9091d51538698b979b379
+--suite Test.Checkout Overview
+--suite Test.Inventory
+--suite Test.Login
+--suite Test.Productcart
+--suite Test.checkout Information

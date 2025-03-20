@@ -1,0 +1,69 @@
+pipeline {
+    agent any
+
+    environment {
+        ROBOT_PATH = './test' // path ของไฟล์ทดสอบ Robot Framework
+        RESULTS_PATH = './results' // path ที่จะเก็บผลการทดสอบ
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // ดึงโค้ดจาก Git (หากใช้ Git)
+                // git 'https://your-repository-url.git'
+
+                // หรือหากใช้งานโค้ดที่อยู่ในเครื่อง
+                echo "Using local files"
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // ติดตั้ง dependencies สำหรับการทดสอบ เช่น Python, Robot Framework, Pabot
+                    sh 'pip install -r requirements.txt' // ถ้าคุณใช้ไฟล์ requirements.txt
+                    sh 'pip install robotframework-pabot' // ติดตั้ง Pabot หากต้องการใช้การทดสอบแบบขนาน
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    // รันการทดสอบทั้งหมดในโฟลเดอร์ test/
+                    sh 'robot --outputdir ${RESULTS_PATH} ${ROBOT_PATH}/**/*.robot'
+                    // หากใช้ Pabot เพื่อรันแบบขนาน
+                    // sh 'pabot --outputdir ${RESULTS_PATH} ${ROBOT_PATH}/**/*.robot'
+                }
+            }
+        }
+
+        stage('Publish Results') {
+            steps {
+                // แสดงผลลัพธ์จากการทดสอบใน Jenkins
+                junit '**/results/output.xml' // นำผลทดสอบจาก output.xml มาแสดงผลใน Jenkins
+                publishHTML(target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'results',
+                    reportFiles: 'report.html',
+                    reportName: 'Robot Framework Report'
+                ])
+            }
+        }
+    }
+
+    post {
+        always {
+            // ทำการ clean หรือทำสิ่งที่ต้องการหลังจากการทดสอบ
+            cleanWs()
+        }
+        success {
+            echo 'Tests completed successfully'
+        }
+        failure {
+            echo 'Tests failed'
+        }
+    }
+}
