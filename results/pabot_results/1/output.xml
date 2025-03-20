@@ -1,0 +1,3197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2025-03-20T16:12:45.187928" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="C:\Users\Nutta\Desktop\Learn Robot freamwork\SwagLab\test">
+<suite id="s1-s1" name="Inventory" source="C:\Users\Nutta\Desktop\Learn Robot freamwork\SwagLab\test\inventory.robot">
+<test id="s1-s1-t1" name="Check login to page Products" line="10">
+<kw name="Open Browser To Sauce Demo" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:12:46.121090" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-20T16:12:46.118082" elapsed="10.322414"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-20T16:12:56.441027" elapsed="1.649136"/>
+</kw>
+<status status="PASS" start="2025-03-20T16:12:46.115977" elapsed="11.974551"/>
+</kw>
+<kw name="Fill the login Form" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:12:58.093582" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:12:58.092256" elapsed="1.861534"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:12:59.955200" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:12:59.954161" elapsed="1.331113"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:01.286544" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:01.285832" elapsed="0.580513"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-03-20T16:12:58.090979" elapsed="3.775667"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-20T16:13:01.867276" elapsed="4.072898"/>
+</kw>
+<status status="PASS" start="2025-03-20T16:12:46.114893" elapsed="19.825402"/>
+</test>
+<test id="s1-s1-t2" name="Validate Cards display in the Shopping Page" line="15">
+<kw name="Open Browser To Sauce Demo" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:05.941652" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-20T16:13:05.941391" elapsed="2.304845"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-20T16:13:08.246712" elapsed="1.113729"/>
+</kw>
+<status status="PASS" start="2025-03-20T16:13:05.941056" elapsed="3.419711"/>
+</kw>
+<kw name="Fill the login Form" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:09.363808" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:09.362737" elapsed="1.749495"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:11.114413" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:11.112884" elapsed="0.712545"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:11.827838" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:11.827030" elapsed="0.631233"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-03-20T16:13:09.361220" elapsed="3.097585"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=inventory_container</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.459157" elapsed="0.187880"/>
+</kw>
+<kw name="Verify Card titles in the Shop page" owner="keywords">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-20T16:13:12.650351" level="INFO">@{expectedList} = [ Sauce Labs Bike Light | Sauce Labs Bolt T-Shirt | Sauce Labs Fleece Jacket | Sauce Labs Onesie | Test.allTheThings() T-Shirt (Red) ]</msg>
+<var>@{expectedList}</var>
+<arg>Sauce Labs Bike Light</arg>
+<arg>Sauce Labs Bolt T-Shirt</arg>
+<arg>Sauce Labs Fleece Jacket</arg>
+<arg>Sauce Labs Onesie</arg>
+<arg>Test.allTheThings() T-Shirt (Red)</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.649202" elapsed="0.001284"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:12.688119" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="e4e596ef7a4bd87b54f0e14a7f758bce", element="f.B54FF06695B3DDC4425AD9E46B282286.d.1EA4117D987743337B2ED3F6B2543DBD.e.39")&gt;, &lt;selenium.webdriv...</msg>
+<var>${elements}</var>
+<arg>xpath= (//div[@class='inventory_item'])</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.651206" elapsed="0.037016"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-20T16:13:12.690294" level="INFO">@{actualList} = [ ]</msg>
+<var>@{actualList}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.689270" elapsed="0.001227"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:12.741953" level="INFO">Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+$29.99
+Add to cart</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.694213" elapsed="0.047959"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actualList}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.742571" elapsed="0.027204"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e4e596ef7a4bd87b54f0e14a7f758bce", element="f.B54FF06695B3DDC4425AD9E46B282286.d.1EA4117D987743337B2ED3F6B2543DBD.e.39")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:12.692440" elapsed="0.077716"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:12.812145" level="INFO">Sauce Labs Bike Light
+A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+$9.99
+Add to cart</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.771441" elapsed="0.040863"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actualList}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.812774" elapsed="0.039153"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e4e596ef7a4bd87b54f0e14a7f758bce", element="f.B54FF06695B3DDC4425AD9E46B282286.d.1EA4117D987743337B2ED3F6B2543DBD.e.40")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:12.770751" elapsed="0.081909"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:12.885536" level="INFO">Sauce Labs Bolt T-Shirt
+Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+$15.99
+Add to cart</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.853867" elapsed="0.031880"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actualList}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.886906" elapsed="0.036469"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e4e596ef7a4bd87b54f0e14a7f758bce", element="f.B54FF06695B3DDC4425AD9E46B282286.d.1EA4117D987743337B2ED3F6B2543DBD.e.41")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:12.853125" elapsed="0.070468"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:12.984684" level="INFO">Sauce Labs Fleece Jacket
+It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
+$49.99
+Add to cart</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.924474" elapsed="0.060380"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actualList}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:12.985292" elapsed="0.028152"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e4e596ef7a4bd87b54f0e14a7f758bce", element="f.B54FF06695B3DDC4425AD9E46B282286.d.1EA4117D987743337B2ED3F6B2543DBD.e.42")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:12.923914" elapsed="0.089764"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:13.075258" level="INFO">Sauce Labs Onesie
+Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+$7.99
+Add to cart</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:13.015547" elapsed="0.059936"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actualList}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:13.075943" elapsed="0.069221"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e4e596ef7a4bd87b54f0e14a7f758bce", element="f.B54FF06695B3DDC4425AD9E46B282286.d.1EA4117D987743337B2ED3F6B2543DBD.e.43")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:13.014298" elapsed="0.131083"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:13.179636" level="INFO">Test.allTheThings() T-Shirt (Red)
+This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+$15.99
+Add to cart</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:13.146265" elapsed="0.033522"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actualList}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:13.180196" elapsed="0.030770"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e4e596ef7a4bd87b54f0e14a7f758bce", element="f.B54FF06695B3DDC4425AD9E46B282286.d.1EA4117D987743337B2ED3F6B2543DBD.e.44")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:13.145743" elapsed="0.065465"/>
+</iter>
+<var>${element}</var>
+<value>@{elements}</value>
+<status status="PASS" start="2025-03-20T16:13:12.690890" elapsed="0.520485"/>
+</for>
+<status status="PASS" start="2025-03-20T16:13:12.647796" elapsed="0.563914"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-20T16:13:13.212504" elapsed="3.002720"/>
+</kw>
+<status status="PASS" start="2025-03-20T16:13:05.940674" elapsed="10.274759"/>
+</test>
+<test id="s1-s1-t3" name="Validate SortProduct Dropdown" line="22">
+<kw name="Open Browser To Sauce Demo" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:16.217792" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-20T16:13:16.217477" elapsed="3.320436"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-20T16:13:19.538639" elapsed="0.310813"/>
+</kw>
+<status status="PASS" start="2025-03-20T16:13:16.217024" elapsed="3.632730"/>
+</kw>
+<kw name="Fill the login Form" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:19.853587" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:19.852378" elapsed="0.925451"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:20.779147" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:20.778290" elapsed="0.660415"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:21.439823" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:21.439150" elapsed="0.747651"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-03-20T16:13:19.850224" elapsed="2.336953"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:22.188820" level="INFO">Clicking element 'css:.product_sort_container'.</msg>
+<arg>css:.product_sort_container</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:22.187837" elapsed="0.431585"/>
+</kw>
+<kw name="Test SortProduct Option" owner="keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:22.623317" level="INFO">กำลังเลือกตัวเลือก: Price (high to low)</msg>
+<arg>กำลังเลือกตัวเลือก: ${expectedOption}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:22.621952" elapsed="0.001742"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:22.626114" level="INFO">Selecting options from selection list 'css=.product_sort_container' by label Price (high to low).</msg>
+<arg>css=.product_sort_container</arg>
+<arg>${expectedOption}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-03-20T16:13:22.624416" elapsed="0.202929"/>
+</kw>
+<kw name="Get Selected List Label" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.041940" level="INFO">${selectedOption} = Price (high to low)</msg>
+<var>${selectedOption}</var>
+<arg>css=.product_sort_container</arg>
+<doc>Returns the label of selected option from selection list ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:22.828492" elapsed="0.213560"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${selectedOption}</arg>
+<arg>${expectedOption}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.042569" elapsed="0.001616"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.046867" level="INFO">เลือกตัวเลือกสำเร็จ: Price (high to low)</msg>
+<arg>เลือกตัวเลือกสำเร็จ: ${selectedOption}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.045115" elapsed="0.002143"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Price (low to high)'</arg>
+<arg>Validate Price Sorting</arg>
+<arg>asc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.047724" elapsed="0.001849"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Price Sorting" owner="keywords">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.073724" level="INFO">@{price_elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.57")&gt; | &lt;selenium.webdr...</msg>
+<var>@{price_elements}</var>
+<arg>css=.inventory_item_price</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.053732" elapsed="0.020070"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.074661" level="INFO">@{actual_prices} = [ ]</msg>
+<var>@{actual_prices}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.074111" elapsed="0.000598"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.075619" level="INFO">กำลังตรวจสอบการเรียงลำดับตามราคา (desc)</msg>
+<arg>กำลังตรวจสอบการเรียงลำดับตามราคา (${order})</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.074982" elapsed="0.000733"/>
+</kw>
+<for flavor="IN ENUMERATE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.085921" level="INFO">${price_text} = $49.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.076650" elapsed="0.009339"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.087278" level="INFO">${price} = 49.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.086232" elapsed="0.001109"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.088289" level="INFO">${price} = 49.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.087649" elapsed="0.000684"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.088552" elapsed="0.000397"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.090343" level="INFO">สินค้าลำดับที่ 1: $49.99 -&gt; 49.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.089158" elapsed="0.001286"/>
+</kw>
+<var name="${index}">0</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.57")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.076315" elapsed="0.014233"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.106691" level="INFO">${price_text} = $29.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.091216" elapsed="0.015537"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.107947" level="INFO">${price} = 29.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.106990" elapsed="0.001010"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.108774" level="INFO">${price} = 29.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.108206" elapsed="0.000645"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.109213" elapsed="0.000769"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.111723" level="INFO">สินค้าลำดับที่ 2: $29.99 -&gt; 29.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.110279" elapsed="0.001705"/>
+</kw>
+<var name="${index}">1</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.58")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.090816" elapsed="0.021376"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.125498" level="INFO">${price_text} = $15.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.113503" elapsed="0.012140"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.129456" level="INFO">${price} = 15.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.126326" elapsed="0.003252"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.130817" level="INFO">${price} = 15.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.129979" elapsed="0.000921"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.131244" elapsed="0.001028"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.134329" level="INFO">สินค้าลำดับที่ 3: $15.99 -&gt; 15.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.132616" elapsed="0.001995"/>
+</kw>
+<var name="${index}">2</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.59")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.112620" elapsed="0.022116"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.151365" level="INFO">${price_text} = $15.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.135525" elapsed="0.016090"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.154400" level="INFO">${price} = 15.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.152334" elapsed="0.002228"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.156637" level="INFO">${price} = 15.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.154966" elapsed="0.001776"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.157132" elapsed="0.000881"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.160435" level="INFO">สินค้าลำดับที่ 4: $15.99 -&gt; 15.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.158408" elapsed="0.002279"/>
+</kw>
+<var name="${index}">3</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.60")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.135045" elapsed="0.025890"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.189404" level="INFO">${price_text} = $9.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.161855" elapsed="0.027675"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.193713" level="INFO">${price} = 9.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.190316" elapsed="0.003518"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.195730" level="INFO">${price} = 9.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.194447" elapsed="0.001379"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.196161" elapsed="0.000974"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.199732" level="INFO">สินค้าลำดับที่ 5: $9.99 -&gt; 9.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.197953" elapsed="0.001944"/>
+</kw>
+<var name="${index}">4</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.61")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.161350" elapsed="0.038705"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.222379" level="INFO">${price_text} = $7.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.201245" elapsed="0.021387"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.225474" level="INFO">${price} = 7.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.223282" elapsed="0.002335"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.227647" level="INFO">${price} = 7.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.226347" elapsed="0.001469"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.228315" elapsed="0.002540"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.234328" level="INFO">สินค้าลำดับที่ 6: $7.99 -&gt; 7.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.231703" elapsed="0.002845"/>
+</kw>
+<var name="${index}">5</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.62")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.200404" elapsed="0.034321"/>
+</iter>
+<var>${index}</var>
+<var>${element}</var>
+<value>@{price_elements}</value>
+<status status="PASS" start="2025-03-20T16:13:23.075853" elapsed="0.159039"/>
+</for>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-03-20T16:13:23.236464" level="INFO">${expected_prices} = [49.99, 29.99, 15.99, 15.99, 9.99, 7.99]</msg>
+<var>${expected_prices}</var>
+<arg>${actual_prices}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.235368" elapsed="0.001189"/>
+</kw>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-03-20T16:13:23.238217" level="INFO">${sorted_expected} = [49.99, 29.99, 15.99, 15.99, 9.99, 7.99]</msg>
+<var>${sorted_expected}</var>
+<arg>${expected_prices}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.237066" elapsed="0.001290"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${order}' == 'asc'</arg>
+<arg>Sort List</arg>
+<arg>${sorted_expected}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.238657" elapsed="0.000964"/>
+</kw>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-03-20T16:13:23.240659" level="INFO">${desc_list} = [49.99, 29.99, 15.99, 15.99, 9.99, 7.99]</msg>
+<var>${desc_list}</var>
+<arg>${sorted_expected}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.239955" elapsed="0.000792"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sort List" owner="Collections">
+<arg>${desc_list}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.242985" elapsed="0.003001"/>
+</kw>
+<arg>'${order}' == 'desc'</arg>
+<arg>Sort List</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.241114" elapsed="0.006011"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Reverse List" owner="Collections">
+<arg>${desc_list}</arg>
+<doc>Reverses the given list in place.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.248887" elapsed="0.000499"/>
+</kw>
+<arg>'${order}' == 'desc'</arg>
+<arg>Reverse List</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.247699" elapsed="0.001851"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${sorted_expected}</arg>
+<arg>${desc_list}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.250719" elapsed="0.001493"/>
+</kw>
+<arg>'${order}' == 'desc'</arg>
+<arg>Set Variable</arg>
+<arg>${sorted_expected}</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.249816" elapsed="0.003104"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.254325" level="INFO">ราคาที่ควรเป็น: [49.99, 29.99, 15.99, 15.99, 9.99, 7.99]</msg>
+<arg>ราคาที่ควรเป็น: ${sorted_expected}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.253473" elapsed="0.001031"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.255701" level="INFO">ราคาจริงบนเว็บ: [49.99, 29.99, 15.99, 15.99, 9.99, 7.99]</msg>
+<arg>ราคาจริงบนเว็บ: ${actual_prices}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.254904" elapsed="0.000931"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${sorted_expected}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.257174" elapsed="0.001433"/>
+</kw>
+<msg time="2025-03-20T16:13:23.259053" level="INFO">${is_equal} = True</msg>
+<var>${is_equal}</var>
+<arg>Lists Should Be Equal</arg>
+<arg>${actual_prices}</arg>
+<arg>${sorted_expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.256211" elapsed="0.002911"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.261192" level="INFO">การเรียงลำดับราคาถูกต้อง</msg>
+<arg>การเรียงลำดับราคาถูกต้อง</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.260468" elapsed="0.001028"/>
+</kw>
+<arg>${is_equal}</arg>
+<arg>Log</arg>
+<arg>การเรียงลำดับราคาถูกต้อง</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.259597" elapsed="0.002197"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${is_equal}</arg>
+<arg>Log</arg>
+<arg>การเรียงลำดับราคาไม่ถูกต้อง</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.262334" elapsed="0.000989"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.269543" level="INFO">${actual} = 49.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.266937" elapsed="0.002835"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.272019" level="INFO">${expected} = 49.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.270360" elapsed="0.001801"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.274621" elapsed="0.000707"/>
+</kw>
+<msg time="2025-03-20T16:13:23.275590" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.272895" elapsed="0.002745"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.277632" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.276164" elapsed="0.001648"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.281231" level="INFO">ตำแหน่งที่ 1: 49.99 == 49.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.278468" elapsed="0.002954"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2025-03-20T16:13:23.265633" elapsed="0.015930"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.283097" level="INFO">${actual} = 29.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.282441" elapsed="0.000733"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.284879" level="INFO">${expected} = 29.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.283558" elapsed="0.001437"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.286588" elapsed="0.000794"/>
+</kw>
+<msg time="2025-03-20T16:13:23.287845" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.285400" elapsed="0.002528"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.288822" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.288278" elapsed="0.000619"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.292031" level="INFO">ตำแหน่งที่ 2: 29.99 == 29.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.289208" elapsed="0.002992"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2025-03-20T16:13:23.281801" elapsed="0.010804"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.294301" level="INFO">${actual} = 15.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.293497" elapsed="0.000974"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.295777" level="INFO">${expected} = 15.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.294865" elapsed="0.001001"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.297126" elapsed="0.001695"/>
+</kw>
+<msg time="2025-03-20T16:13:23.299441" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.296172" elapsed="0.003360"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.300999" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.300004" elapsed="0.001113"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.304871" level="INFO">ตำแหน่งที่ 3: 15.99 == 15.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.301656" elapsed="0.003428"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2025-03-20T16:13:23.293013" elapsed="0.012222"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.306947" level="INFO">${actual} = 15.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.306184" elapsed="0.000857"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.311540" level="INFO">${expected} = 15.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.307418" elapsed="0.004364"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.314519" elapsed="0.001160"/>
+</kw>
+<msg time="2025-03-20T16:13:23.316016" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.312844" elapsed="0.003226"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.316901" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.316410" elapsed="0.000564"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.320974" level="INFO">ตำแหน่งที่ 4: 15.99 == 15.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.317324" elapsed="0.003830"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2025-03-20T16:13:23.305666" elapsed="0.015638"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.323407" level="INFO">${actual} = 9.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.322176" elapsed="0.001365"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.326168" level="INFO">${expected} = 9.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.324426" elapsed="0.001834"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.329562" elapsed="0.003665"/>
+</kw>
+<msg time="2025-03-20T16:13:23.333779" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.328035" elapsed="0.005826"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.334891" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.334287" elapsed="0.000683"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.338820" level="INFO">ตำแหน่งที่ 5: 9.99 == 9.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.335280" elapsed="0.003887"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2025-03-20T16:13:23.321687" elapsed="0.017677"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.343122" level="INFO">${actual} = 7.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.341600" elapsed="0.001635"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.344901" level="INFO">${expected} = 7.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.343911" elapsed="0.001093"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.347083" elapsed="0.001126"/>
+</kw>
+<msg time="2025-03-20T16:13:23.348590" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.345689" elapsed="0.003341"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.350771" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.349769" elapsed="0.001110"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.357819" level="INFO">ตำแหน่งที่ 6: 7.99 == 7.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.351230" elapsed="0.007150"/>
+</kw>
+<var name="${index}">5</var>
+<status status="PASS" start="2025-03-20T16:13:23.340839" elapsed="0.017918"/>
+</iter>
+<var>${index}</var>
+<value>0</value>
+<value>${actual_prices.__len__()}</value>
+<status status="PASS" start="2025-03-20T16:13:23.263731" elapsed="0.095146"/>
+</for>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${sorted_expected}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.359279" elapsed="0.000948"/>
+</kw>
+<arg>desc</arg>
+<status status="PASS" start="2025-03-20T16:13:23.051897" elapsed="0.308997"/>
+</kw>
+<arg>'${expectedOption}' == 'Price (high to low)'</arg>
+<arg>Validate Price Sorting</arg>
+<arg>desc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.050190" elapsed="0.310917"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Name (A to Z)'</arg>
+<arg>Validate Name Sorting</arg>
+<arg>asc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.361565" elapsed="0.002007"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Name (Z to A)'</arg>
+<arg>Validate Name Sorting</arg>
+<arg>desc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.364892" elapsed="0.001180"/>
+</kw>
+<arg>Price (high to low)</arg>
+<status status="PASS" start="2025-03-20T16:13:22.620091" elapsed="0.746396"/>
+</kw>
+<kw name="Test SortProduct Option" owner="keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.369747" level="INFO">กำลังเลือกตัวเลือก: Price (low to high)</msg>
+<arg>กำลังเลือกตัวเลือก: ${expectedOption}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.368860" elapsed="0.001070"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.371638" level="INFO">Selecting options from selection list 'css=.product_sort_container' by label Price (low to high).</msg>
+<arg>css=.product_sort_container</arg>
+<arg>${expectedOption}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.370432" elapsed="0.159444"/>
+</kw>
+<kw name="Get Selected List Label" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.615392" level="INFO">${selectedOption} = Price (low to high)</msg>
+<var>${selectedOption}</var>
+<arg>css=.product_sort_container</arg>
+<doc>Returns the label of selected option from selection list ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.530334" elapsed="0.085121"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${selectedOption}</arg>
+<arg>${expectedOption}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.615669" elapsed="0.000467"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.616777" level="INFO">เลือกตัวเลือกสำเร็จ: Price (low to high)</msg>
+<arg>เลือกตัวเลือกสำเร็จ: ${selectedOption}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.616378" elapsed="0.000689"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Price Sorting" owner="keywords">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.627184" level="INFO">@{price_elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.62")&gt; | &lt;selenium.webdr...</msg>
+<var>@{price_elements}</var>
+<arg>css=.inventory_item_price</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.618990" elapsed="0.008262"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.627972" level="INFO">@{actual_prices} = [ ]</msg>
+<var>@{actual_prices}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.627491" elapsed="0.000534"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.628579" level="INFO">กำลังตรวจสอบการเรียงลำดับตามราคา (asc)</msg>
+<arg>กำลังตรวจสอบการเรียงลำดับตามราคา (${order})</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.628228" elapsed="0.000431"/>
+</kw>
+<for flavor="IN ENUMERATE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.641718" level="INFO">${price_text} = $7.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.629952" elapsed="0.011887"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.644251" level="INFO">${price} = 7.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.642240" elapsed="0.002105"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.645775" level="INFO">${price} = 7.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.644710" elapsed="0.001178"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.646274" elapsed="0.000741"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.649246" level="INFO">สินค้าลำดับที่ 1: $7.99 -&gt; 7.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.647289" elapsed="0.002167"/>
+</kw>
+<var name="${index}">0</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.62")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.629390" elapsed="0.020239"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.665461" level="INFO">${price_text} = $9.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.650726" elapsed="0.014785"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.667182" level="INFO">${price} = 9.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.665728" elapsed="0.001543"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.668396" level="INFO">${price} = 9.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.667594" elapsed="0.000865"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.668703" elapsed="0.000608"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.671618" level="INFO">สินค้าลำดับที่ 2: $9.99 -&gt; 9.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.669557" elapsed="0.002212"/>
+</kw>
+<var name="${index}">1</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.61")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.649996" elapsed="0.021912"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.683234" level="INFO">${price_text} = $15.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.672725" elapsed="0.010584"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.684900" level="INFO">${price} = 15.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.683712" elapsed="0.001246"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.686262" level="INFO">${price} = 15.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.685213" elapsed="0.001111"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.686647" elapsed="0.000547"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.688819" level="INFO">สินค้าลำดับที่ 3: $15.99 -&gt; 15.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.687432" elapsed="0.001488"/>
+</kw>
+<var name="${index}">2</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.59")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.672239" elapsed="0.016787"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.701788" level="INFO">${price_text} = $15.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.689804" elapsed="0.012081"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.703725" level="INFO">${price} = 15.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.702220" elapsed="0.001589"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.704999" level="INFO">${price} = 15.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.704169" elapsed="0.000940"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.705499" elapsed="0.001185"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.709444" level="INFO">สินค้าลำดับที่ 4: $15.99 -&gt; 15.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.707112" elapsed="0.002491"/>
+</kw>
+<var name="${index}">3</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.60")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.689288" elapsed="0.020467"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.727037" level="INFO">${price_text} = $29.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.711318" elapsed="0.015780"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.728524" level="INFO">${price} = 29.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.727348" elapsed="0.001236"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.729349" level="INFO">${price} = 29.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.728815" elapsed="0.000575"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.729568" elapsed="0.000391"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.731578" level="INFO">สินค้าลำดับที่ 5: $29.99 -&gt; 29.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.730166" elapsed="0.001602"/>
+</kw>
+<var name="${index}">4</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.58")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.710377" elapsed="0.021591"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.743787" level="INFO">${price_text} = $49.99</msg>
+<var>${price_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.733095" elapsed="0.010797"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.746670" level="INFO">${price} = 49.99</msg>
+<var>${price}</var>
+<arg>${price_text.replace('$', '')}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.745063" elapsed="0.001692"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.748053" level="INFO">${price} = 49.99</msg>
+<var>${price}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.747114" elapsed="0.000988"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.748301" elapsed="0.000499"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.750368" level="INFO">สินค้าลำดับที่ 6: $49.99 -&gt; 49.99</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${price_text} -&gt; ${price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.749041" elapsed="0.001479"/>
+</kw>
+<var name="${index}">5</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.57")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.732457" elapsed="0.018205"/>
+</iter>
+<var>${index}</var>
+<var>${element}</var>
+<value>@{price_elements}</value>
+<status status="PASS" start="2025-03-20T16:13:23.628777" elapsed="0.122014"/>
+</for>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-03-20T16:13:23.751897" level="INFO">${expected_prices} = [7.99, 9.99, 15.99, 15.99, 29.99, 49.99]</msg>
+<var>${expected_prices}</var>
+<arg>${actual_prices}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.751116" elapsed="0.000839"/>
+</kw>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-03-20T16:13:23.752970" level="INFO">${sorted_expected} = [7.99, 9.99, 15.99, 15.99, 29.99, 49.99]</msg>
+<var>${sorted_expected}</var>
+<arg>${expected_prices}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.752269" elapsed="0.000759"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sort List" owner="Collections">
+<arg>${sorted_expected}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.754060" elapsed="0.000853"/>
+</kw>
+<arg>'${order}' == 'asc'</arg>
+<arg>Sort List</arg>
+<arg>${sorted_expected}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.753297" elapsed="0.001880"/>
+</kw>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-03-20T16:13:23.756256" level="INFO">${desc_list} = [7.99, 9.99, 15.99, 15.99, 29.99, 49.99]</msg>
+<var>${desc_list}</var>
+<arg>${sorted_expected}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.755463" elapsed="0.000857"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${order}' == 'desc'</arg>
+<arg>Sort List</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.756549" elapsed="0.000477"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${order}' == 'desc'</arg>
+<arg>Reverse List</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.757241" elapsed="0.000614"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${order}' == 'desc'</arg>
+<arg>Set Variable</arg>
+<arg>${sorted_expected}</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.758156" elapsed="0.000479"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.759127" level="INFO">ราคาที่ควรเป็น: [7.99, 9.99, 15.99, 15.99, 29.99, 49.99]</msg>
+<arg>ราคาที่ควรเป็น: ${sorted_expected}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.758833" elapsed="0.000357"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.759603" level="INFO">ราคาจริงบนเว็บ: [7.99, 9.99, 15.99, 15.99, 29.99, 49.99]</msg>
+<arg>ราคาจริงบนเว็บ: ${actual_prices}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.759335" elapsed="0.000327"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${sorted_expected}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.760396" elapsed="0.000574"/>
+</kw>
+<msg time="2025-03-20T16:13:23.761155" level="INFO">${is_equal} = True</msg>
+<var>${is_equal}</var>
+<arg>Lists Should Be Equal</arg>
+<arg>${actual_prices}</arg>
+<arg>${sorted_expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.759861" elapsed="0.001327"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.762175" level="INFO">การเรียงลำดับราคาถูกต้อง</msg>
+<arg>การเรียงลำดับราคาถูกต้อง</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.761807" elapsed="0.000448"/>
+</kw>
+<arg>${is_equal}</arg>
+<arg>Log</arg>
+<arg>การเรียงลำดับราคาถูกต้อง</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.761377" elapsed="0.001007"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${is_equal}</arg>
+<arg>Log</arg>
+<arg>การเรียงลำดับราคาไม่ถูกต้อง</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.762589" elapsed="0.000636"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.766728" level="INFO">${actual} = 7.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.765972" elapsed="0.000830"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.767599" level="INFO">${expected} = 7.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.767122" elapsed="0.000516"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.768185" elapsed="0.000463"/>
+</kw>
+<msg time="2025-03-20T16:13:23.768888" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.767859" elapsed="0.001065"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.770212" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.769572" elapsed="0.000696"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.773266" level="INFO">ตำแหน่งที่ 1: 7.99 == 7.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.770498" elapsed="0.002878"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2025-03-20T16:13:23.765339" elapsed="0.008136"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.774475" level="INFO">${actual} = 9.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.774075" elapsed="0.000446"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.775154" level="INFO">${expected} = 9.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.774698" elapsed="0.000506"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.775853" elapsed="0.000343"/>
+</kw>
+<msg time="2025-03-20T16:13:23.776330" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.775431" elapsed="0.000932"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.777376" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.776561" elapsed="0.000920"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.780864" level="INFO">ตำแหน่งที่ 2: 9.99 == 9.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.777872" elapsed="0.003102"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2025-03-20T16:13:23.773675" elapsed="0.007421"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.782180" level="INFO">${actual} = 15.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.781779" elapsed="0.000449"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.782844" level="INFO">${expected} = 15.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.782429" elapsed="0.000457"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.783470" elapsed="0.000344"/>
+</kw>
+<msg time="2025-03-20T16:13:23.783947" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.783080" elapsed="0.000898"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.784784" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.784190" elapsed="0.000658"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.787508" level="INFO">ตำแหน่งที่ 3: 15.99 == 15.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.785086" elapsed="0.002562"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2025-03-20T16:13:23.781377" elapsed="0.006395"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.789224" level="INFO">${actual} = 15.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.788506" elapsed="0.000764"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.789902" level="INFO">${expected} = 15.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.789485" elapsed="0.000458"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.791163" elapsed="0.000849"/>
+</kw>
+<msg time="2025-03-20T16:13:23.792297" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.790346" elapsed="0.002001"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.793530" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.792691" elapsed="0.000948"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.797033" level="INFO">ตำแหน่งที่ 4: 15.99 == 15.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.793937" elapsed="0.003273"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2025-03-20T16:13:23.788037" elapsed="0.009311"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.798938" level="INFO">${actual} = 29.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.798384" elapsed="0.000602"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.799865" level="INFO">${expected} = 29.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.799212" elapsed="0.000700"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.800512" elapsed="0.000333"/>
+</kw>
+<msg time="2025-03-20T16:13:23.800983" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.800116" elapsed="0.000898"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.801628" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.801186" elapsed="0.000485"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.803282" level="INFO">ตำแหน่งที่ 5: 29.99 == 29.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.801839" elapsed="0.001546"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2025-03-20T16:13:23.797593" elapsed="0.005926"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.805161" level="INFO">${actual} = 49.99</msg>
+<var>${actual}</var>
+<arg>${actual_prices}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.804518" elapsed="0.000705"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:23.806183" level="INFO">${expected} = 49.99</msg>
+<var>${expected}</var>
+<arg>${sorted_expected}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.805480" elapsed="0.000766"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.807174" elapsed="0.000423"/>
+</kw>
+<msg time="2025-03-20T16:13:23.807765" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.806546" elapsed="0.001251"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.808300" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.807987" elapsed="0.000349"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.810136" level="INFO">ตำแหน่งที่ 6: 49.99 == 49.99 : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: ${actual} == ${expected} : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.808473" elapsed="0.001763"/>
+</kw>
+<var name="${index}">5</var>
+<status status="PASS" start="2025-03-20T16:13:23.803929" elapsed="0.006398"/>
+</iter>
+<var>${index}</var>
+<value>0</value>
+<value>${actual_prices.__len__()}</value>
+<status status="PASS" start="2025-03-20T16:13:23.763449" elapsed="0.046949"/>
+</for>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${actual_prices}</arg>
+<arg>${sorted_expected}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.810615" elapsed="0.000551"/>
+</kw>
+<arg>asc</arg>
+<status status="PASS" start="2025-03-20T16:13:23.618276" elapsed="0.193066"/>
+</kw>
+<arg>'${expectedOption}' == 'Price (low to high)'</arg>
+<arg>Validate Price Sorting</arg>
+<arg>asc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.617393" elapsed="0.194031"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Price (high to low)'</arg>
+<arg>Validate Price Sorting</arg>
+<arg>desc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.811611" elapsed="0.000476"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Name (A to Z)'</arg>
+<arg>Validate Name Sorting</arg>
+<arg>asc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.812335" elapsed="0.000506"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Name (Z to A)'</arg>
+<arg>Validate Name Sorting</arg>
+<arg>desc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.813080" elapsed="0.000572"/>
+</kw>
+<arg>Price (low to high)</arg>
+<status status="PASS" start="2025-03-20T16:13:23.367010" elapsed="0.446891"/>
+</kw>
+<kw name="Test SortProduct Option" owner="keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.815131" level="INFO">กำลังเลือกตัวเลือก: Name (A to Z)</msg>
+<arg>กำลังเลือกตัวเลือก: ${expectedOption}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.814774" elapsed="0.000435"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.816288" level="INFO">Selecting options from selection list 'css=.product_sort_container' by label Name (A to Z).</msg>
+<arg>css=.product_sort_container</arg>
+<arg>${expectedOption}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.815515" elapsed="0.091307"/>
+</kw>
+<kw name="Get Selected List Label" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.966594" level="INFO">${selectedOption} = Name (A to Z)</msg>
+<var>${selectedOption}</var>
+<arg>css=.product_sort_container</arg>
+<doc>Returns the label of selected option from selection list ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.907224" elapsed="0.059430"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${selectedOption}</arg>
+<arg>${expectedOption}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.966881" elapsed="0.000569"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.967971" level="INFO">เลือกตัวเลือกสำเร็จ: Name (A to Z)</msg>
+<arg>เลือกตัวเลือกสำเร็จ: ${selectedOption}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.967640" elapsed="0.000399"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Price (low to high)'</arg>
+<arg>Validate Price Sorting</arg>
+<arg>asc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.968248" elapsed="0.000440"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Price (high to low)'</arg>
+<arg>Validate Price Sorting</arg>
+<arg>desc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.969066" elapsed="0.000469"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Name Sorting" owner="keywords">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.986450" level="INFO">@{name_elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.78")&gt; | &lt;selenium.webdr...</msg>
+<var>@{name_elements}</var>
+<arg>css=.inventory_item_name</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.971271" elapsed="0.015245"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.987076" level="INFO">@{actual_names} = [ ]</msg>
+<var>@{actual_names}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.986738" elapsed="0.000380"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:23.987575" level="INFO">กำลังตรวจสอบการเรียงลำดับตามชื่อ (asc)</msg>
+<arg>กำลังตรวจสอบการเรียงลำดับตามชื่อ (${order})</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.987298" elapsed="0.000349"/>
+</kw>
+<for flavor="IN ENUMERATE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:23.998787" level="INFO">${name_text} = Sauce Labs Backpack</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.988295" elapsed="0.010547"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.999076" elapsed="0.000594"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.001142" level="INFO">สินค้าลำดับที่ 1: Sauce Labs Backpack</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.999927" elapsed="0.001320"/>
+</kw>
+<var name="${index}">0</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.78")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:23.988057" elapsed="0.013288"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.014052" level="INFO">${name_text} = Sauce Labs Bike Light</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.002019" elapsed="0.012108"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.014434" elapsed="0.000653"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.016687" level="INFO">สินค้าลำดับที่ 2: Sauce Labs Bike Light</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.015434" elapsed="0.001349"/>
+</kw>
+<var name="${index}">1</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.88")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.001629" elapsed="0.015297"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.034685" level="INFO">${name_text} = Sauce Labs Bolt T-Shirt</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.017888" elapsed="0.016897"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.035193" elapsed="0.000545"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.036769" level="INFO">สินค้าลำดับที่ 3: Sauce Labs Bolt T-Shirt</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.035924" elapsed="0.000927"/>
+</kw>
+<var name="${index}">2</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.89")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.017280" elapsed="0.019644"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.063618" level="INFO">${name_text} = Sauce Labs Fleece Jacket</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.037432" elapsed="0.026263"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.063917" elapsed="0.000443"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.065836" level="INFO">สินค้าลำดับที่ 4: Sauce Labs Fleece Jacket</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.064564" elapsed="0.001385"/>
+</kw>
+<var name="${index}">3</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.44")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.037118" elapsed="0.028958"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.084020" level="INFO">${name_text} = Sauce Labs Onesie</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.066806" elapsed="0.017338"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.084661" elapsed="0.002631"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.089913" level="INFO">สินค้าลำดับที่ 5: Sauce Labs Onesie</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.087779" elapsed="0.002284"/>
+</kw>
+<var name="${index}">4</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.65")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.066364" elapsed="0.023840"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.105676" level="INFO">${name_text} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.091789" elapsed="0.013987"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.106129" elapsed="0.000702"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.109035" level="INFO">สินค้าลำดับที่ 6: Test.allTheThings() T-Shirt (Red)</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.107201" elapsed="0.001994"/>
+</kw>
+<var name="${index}">5</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.46")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.091129" elapsed="0.018218"/>
+</iter>
+<var>${index}</var>
+<var>${element}</var>
+<value>@{name_elements}</value>
+<status status="PASS" start="2025-03-20T16:13:23.987748" elapsed="0.121713"/>
+</for>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-03-20T16:13:24.110832" level="INFO">${sorted_names} = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<var>${sorted_names}</var>
+<arg>${actual_names}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.109758" elapsed="0.001180"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sort List" owner="Collections">
+<arg>${sorted_names}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.112434" elapsed="0.000749"/>
+</kw>
+<arg>'${order}' == 'asc'</arg>
+<arg>Sort List</arg>
+<arg>${sorted_names}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.111340" elapsed="0.002039"/>
+</kw>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-03-20T16:13:24.114586" level="INFO">${desc_list} = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<var>${desc_list}</var>
+<arg>${sorted_names}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.113660" elapsed="0.001001"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${order}' == 'desc'</arg>
+<arg>Sort List</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.114966" elapsed="0.000730"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${order}' == 'desc'</arg>
+<arg>Reverse List</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.116068" elapsed="0.000901"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${order}' == 'desc'</arg>
+<arg>Set Variable</arg>
+<arg>${sorted_names}</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.117398" elapsed="0.000848"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.119479" level="INFO">ชื่อที่ควรเป็น: ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<arg>ชื่อที่ควรเป็น: ${sorted_names}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.118795" elapsed="0.000819"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.120727" level="INFO">ชื่อจริงบนเว็บ: ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']</msg>
+<arg>ชื่อจริงบนเว็บ: ${actual_names}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.119918" elapsed="0.000943"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${sorted_names}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.121796" elapsed="0.000928"/>
+</kw>
+<msg time="2025-03-20T16:13:24.122961" level="INFO">${is_equal} = True</msg>
+<var>${is_equal}</var>
+<arg>Lists Should Be Equal</arg>
+<arg>${actual_names}</arg>
+<arg>${sorted_names}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.121185" elapsed="0.001818"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.125227" level="INFO">การเรียงลำดับชื่อถูกต้อง</msg>
+<arg>การเรียงลำดับชื่อถูกต้อง</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.124295" elapsed="0.001229"/>
+</kw>
+<arg>${is_equal}</arg>
+<arg>Log</arg>
+<arg>การเรียงลำดับชื่อถูกต้อง</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.123233" elapsed="0.002538"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${is_equal}</arg>
+<arg>Log</arg>
+<arg>การเรียงลำดับชื่อไม่ถูกต้อง</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.126064" elapsed="0.001410"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.132958" level="INFO">${actual} = Sauce Labs Backpack</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.131531" elapsed="0.001524"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.134020" level="INFO">${expected} = Sauce Labs Backpack</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.133399" elapsed="0.000710"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.135239" elapsed="0.000737"/>
+</kw>
+<msg time="2025-03-20T16:13:24.136151" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.134464" elapsed="0.001729"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.137311" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.136450" elapsed="0.000949"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.140222" level="INFO">ตำแหน่งที่ 1: "Sauce Labs Backpack" == "Sauce Labs Backpack" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.137826" elapsed="0.002575"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2025-03-20T16:13:24.130749" elapsed="0.009780"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.141762" level="INFO">${actual} = Sauce Labs Bike Light</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.141189" elapsed="0.000630"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.142729" level="INFO">${expected} = Sauce Labs Bike Light</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.142090" elapsed="0.000696"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.143722" elapsed="0.000624"/>
+</kw>
+<msg time="2025-03-20T16:13:24.144606" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.143074" elapsed="0.001572"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.145322" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.144910" elapsed="0.000460"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.147750" level="INFO">ตำแหน่งที่ 2: "Sauce Labs Bike Light" == "Sauce Labs Bike Light" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.145590" elapsed="0.002276"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2025-03-20T16:13:24.140750" elapsed="0.007234"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.149644" level="INFO">${actual} = Sauce Labs Bolt T-Shirt</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.148803" elapsed="0.000919"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.150959" level="INFO">${expected} = Sauce Labs Bolt T-Shirt</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.150017" elapsed="0.001032"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.152163" elapsed="0.000797"/>
+</kw>
+<msg time="2025-03-20T16:13:24.153202" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.151422" elapsed="0.001826"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.154200" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.153538" elapsed="0.000735"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.156928" level="INFO">ตำแหน่งที่ 3: "Sauce Labs Bolt T-Shirt" == "Sauce Labs Bolt T-Shirt" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.154569" elapsed="0.002520"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2025-03-20T16:13:24.148296" elapsed="0.008912"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.159044" level="INFO">${actual} = Sauce Labs Fleece Jacket</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.158508" elapsed="0.000595"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.159750" level="INFO">${expected} = Sauce Labs Fleece Jacket</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.159309" elapsed="0.000486"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.161074" elapsed="0.000593"/>
+</kw>
+<msg time="2025-03-20T16:13:24.161838" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.160021" elapsed="0.001851"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.163380" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.162315" elapsed="0.001189"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.168030" level="INFO">ตำแหน่งที่ 4: "Sauce Labs Fleece Jacket" == "Sauce Labs Fleece Jacket" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.164268" elapsed="0.003940"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2025-03-20T16:13:24.157497" elapsed="0.010871"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.171842" level="INFO">${actual} = Sauce Labs Onesie</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.171008" elapsed="0.000920"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.173267" level="INFO">${expected} = Sauce Labs Onesie</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.172653" elapsed="0.000660"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.173869" elapsed="0.000360"/>
+</kw>
+<msg time="2025-03-20T16:13:24.174393" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.173568" elapsed="0.000864"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.175535" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.174657" elapsed="0.000983"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.180291" level="INFO">ตำแหน่งที่ 5: "Sauce Labs Onesie" == "Sauce Labs Onesie" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.175999" elapsed="0.004462"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2025-03-20T16:13:24.168878" elapsed="0.011829"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.182801" level="INFO">${actual} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.181837" elapsed="0.001065"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.183970" level="INFO">${expected} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.183292" elapsed="0.000741"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.185011" elapsed="0.000663"/>
+</kw>
+<msg time="2025-03-20T16:13:24.185956" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.184438" elapsed="0.001567"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.186808" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.186275" elapsed="0.000595"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.189710" level="INFO">ตำแหน่งที่ 6: "Test.allTheThings() T-Shirt (Red)" == "Test.allTheThings() T-Shirt (Red)" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.187143" elapsed="0.002720"/>
+</kw>
+<var name="${index}">5</var>
+<status status="PASS" start="2025-03-20T16:13:24.181172" elapsed="0.008833"/>
+</iter>
+<var>${index}</var>
+<value>0</value>
+<value>${actual_names.__len__()}</value>
+<status status="PASS" start="2025-03-20T16:13:24.128107" elapsed="0.062003"/>
+</for>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${sorted_names}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.190582" elapsed="0.000961"/>
+</kw>
+<arg>asc</arg>
+<status status="PASS" start="2025-03-20T16:13:23.970465" elapsed="0.221299"/>
+</kw>
+<arg>'${expectedOption}' == 'Name (A to Z)'</arg>
+<arg>Validate Name Sorting</arg>
+<arg>asc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:23.969752" elapsed="0.222130"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Name (Z to A)'</arg>
+<arg>Validate Name Sorting</arg>
+<arg>desc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.192295" elapsed="0.001998"/>
+</kw>
+<arg>Name (A to Z)</arg>
+<status status="PASS" start="2025-03-20T16:13:23.814229" elapsed="0.380371"/>
+</kw>
+<kw name="Test SortProduct Option" owner="keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.196366" level="INFO">กำลังเลือกตัวเลือก: Name (Z to A)</msg>
+<arg>กำลังเลือกตัวเลือก: ${expectedOption}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.195794" elapsed="0.000687"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.197355" level="INFO">Selecting options from selection list 'css=.product_sort_container' by label Name (Z to A).</msg>
+<arg>css=.product_sort_container</arg>
+<arg>${expectedOption}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.196738" elapsed="0.187542"/>
+</kw>
+<kw name="Get Selected List Label" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.482083" level="INFO">${selectedOption} = Name (Z to A)</msg>
+<var>${selectedOption}</var>
+<arg>css=.product_sort_container</arg>
+<doc>Returns the label of selected option from selection list ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.384723" elapsed="0.097431"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${selectedOption}</arg>
+<arg>${expectedOption}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.482418" elapsed="0.000368"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.483162" level="INFO">เลือกตัวเลือกสำเร็จ: Name (Z to A)</msg>
+<arg>เลือกตัวเลือกสำเร็จ: ${selectedOption}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.482924" elapsed="0.000308"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Price (low to high)'</arg>
+<arg>Validate Price Sorting</arg>
+<arg>asc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.483393" elapsed="0.000629"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Price (high to low)'</arg>
+<arg>Validate Price Sorting</arg>
+<arg>desc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.484667" elapsed="0.001535"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${expectedOption}' == 'Name (A to Z)'</arg>
+<arg>Validate Name Sorting</arg>
+<arg>asc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.486998" elapsed="0.001358"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Name Sorting" owner="keywords">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.500276" level="INFO">@{name_elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.46")&gt; | &lt;selenium.webdr...</msg>
+<var>@{name_elements}</var>
+<arg>css=.inventory_item_name</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.490101" elapsed="0.010259"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.500931" level="INFO">@{actual_names} = [ ]</msg>
+<var>@{actual_names}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.500595" elapsed="0.000375"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.501396" level="INFO">กำลังตรวจสอบการเรียงลำดับตามชื่อ (desc)</msg>
+<arg>กำลังตรวจสอบการเรียงลำดับตามชื่อ (${order})</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.501122" elapsed="0.000397"/>
+</kw>
+<for flavor="IN ENUMERATE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.510432" level="INFO">${name_text} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.502170" elapsed="0.008366"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.510935" elapsed="0.001372"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.514662" level="INFO">สินค้าลำดับที่ 1: Test.allTheThings() T-Shirt (Red)</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.512864" elapsed="0.002038"/>
+</kw>
+<var name="${index}">0</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.46")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.501964" elapsed="0.013198"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.529448" level="INFO">${name_text} = Sauce Labs Onesie</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.517119" elapsed="0.012384"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.529705" elapsed="0.000605"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.531498" level="INFO">สินค้าลำดับที่ 2: Sauce Labs Onesie</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.530615" elapsed="0.000955"/>
+</kw>
+<var name="${index}">1</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.65")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.515585" elapsed="0.016056"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.540302" level="INFO">${name_text} = Sauce Labs Fleece Jacket</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.532071" elapsed="0.008286"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.540544" elapsed="0.000457"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.542128" level="INFO">สินค้าลำดับที่ 3: Sauce Labs Fleece Jacket</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.541229" elapsed="0.000976"/>
+</kw>
+<var name="${index}">2</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.44")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.531812" elapsed="0.010475"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.550512" level="INFO">${name_text} = Sauce Labs Bolt T-Shirt</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.542707" elapsed="0.007871"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.550798" elapsed="0.000518"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.552736" level="INFO">สินค้าลำดับที่ 4: Sauce Labs Bolt T-Shirt</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.551533" elapsed="0.001314"/>
+</kw>
+<var name="${index}">3</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.89")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.542469" elapsed="0.010485"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.562680" level="INFO">${name_text} = Sauce Labs Bike Light</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.553853" elapsed="0.008883"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.562926" elapsed="0.000366"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.564389" level="INFO">สินค้าลำดับที่ 5: Sauce Labs Bike Light</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.563452" elapsed="0.001049"/>
+</kw>
+<var name="${index}">4</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.88")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.553213" elapsed="0.011517"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:24.574891" level="INFO">${name_text} = Sauce Labs Backpack</msg>
+<var>${name_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.565277" elapsed="0.009670"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.575175" elapsed="0.000756"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.577205" level="INFO">สินค้าลำดับที่ 6: Sauce Labs Backpack</msg>
+<arg>สินค้าลำดับที่ ${index+1}: ${name_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.576101" elapsed="0.001246"/>
+</kw>
+<var name="${index}">5</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bc3c5157e14c51da6a3ce9a20d9c26dc", element="f.DA47B7145DFDBE51A82332A43D9A6B08.d.02BAD21B467F8669FFE2A905DE7B3558.e.78")&gt;</var>
+<status status="PASS" start="2025-03-20T16:13:24.564960" elapsed="0.012535"/>
+</iter>
+<var>${index}</var>
+<var>${element}</var>
+<value>@{name_elements}</value>
+<status status="PASS" start="2025-03-20T16:13:24.501637" elapsed="0.075993"/>
+</for>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-03-20T16:13:24.578724" level="INFO">${sorted_names} = ['Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Onesie', 'Sauce Labs Fleece Jacket', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Bike Light', 'Sauce Labs Backpack']</msg>
+<var>${sorted_names}</var>
+<arg>${actual_names}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.577944" elapsed="0.000862"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${order}' == 'asc'</arg>
+<arg>Sort List</arg>
+<arg>${sorted_names}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.579170" elapsed="0.000963"/>
+</kw>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-03-20T16:13:24.581287" level="INFO">${desc_list} = ['Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Onesie', 'Sauce Labs Fleece Jacket', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Bike Light', 'Sauce Labs Backpack']</msg>
+<var>${desc_list}</var>
+<arg>${sorted_names}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.580448" elapsed="0.000898"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sort List" owner="Collections">
+<arg>${desc_list}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.582313" elapsed="0.000673"/>
+</kw>
+<arg>'${order}' == 'desc'</arg>
+<arg>Sort List</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.581629" elapsed="0.001546"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Reverse List" owner="Collections">
+<arg>${desc_list}</arg>
+<doc>Reverses the given list in place.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.584140" elapsed="0.000430"/>
+</kw>
+<arg>'${order}' == 'desc'</arg>
+<arg>Reverse List</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.583503" elapsed="0.001213"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${sorted_names}</arg>
+<arg>${desc_list}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.585966" elapsed="0.000643"/>
+</kw>
+<arg>'${order}' == 'desc'</arg>
+<arg>Set Variable</arg>
+<arg>${sorted_names}</arg>
+<arg>${desc_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.584962" elapsed="0.001844"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.587492" level="INFO">ชื่อที่ควรเป็น: ['Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Onesie', 'Sauce Labs Fleece Jacket', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Bike Light', 'Sauce Labs Backpack']</msg>
+<arg>ชื่อที่ควรเป็น: ${sorted_names}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.587043" elapsed="0.000566"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.588471" level="INFO">ชื่อจริงบนเว็บ: ['Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Onesie', 'Sauce Labs Fleece Jacket', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Bike Light', 'Sauce Labs Backpack']</msg>
+<arg>ชื่อจริงบนเว็บ: ${actual_names}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.587891" elapsed="0.000695"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${sorted_names}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.589293" elapsed="0.000459"/>
+</kw>
+<msg time="2025-03-20T16:13:24.589941" level="INFO">${is_equal} = True</msg>
+<var>${is_equal}</var>
+<arg>Lists Should Be Equal</arg>
+<arg>${actual_names}</arg>
+<arg>${sorted_names}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.588861" elapsed="0.001120"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.591382" level="INFO">การเรียงลำดับชื่อถูกต้อง</msg>
+<arg>การเรียงลำดับชื่อถูกต้อง</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.590919" elapsed="0.000575"/>
+</kw>
+<arg>${is_equal}</arg>
+<arg>Log</arg>
+<arg>การเรียงลำดับชื่อถูกต้อง</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.590221" elapsed="0.001407"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${is_equal}</arg>
+<arg>Log</arg>
+<arg>การเรียงลำดับชื่อไม่ถูกต้อง</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.591896" elapsed="0.001336"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.596387" level="INFO">${actual} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.595912" elapsed="0.000541"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.597295" level="INFO">${expected} = Test.allTheThings() T-Shirt (Red)</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.596775" elapsed="0.000571"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.598162" elapsed="0.000384"/>
+</kw>
+<msg time="2025-03-20T16:13:24.598707" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.597768" elapsed="0.000981"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.599330" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.598958" elapsed="0.000422"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.601529" level="INFO">ตำแหน่งที่ 1: "Test.allTheThings() T-Shirt (Red)" == "Test.allTheThings() T-Shirt (Red)" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.599585" elapsed="0.002035"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2025-03-20T16:13:24.595379" elapsed="0.006333"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.602410" level="INFO">${actual} = Sauce Labs Onesie</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.602127" elapsed="0.000319"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.602867" level="INFO">${expected} = Sauce Labs Onesie</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.602589" elapsed="0.000317"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.603341" elapsed="0.000287"/>
+</kw>
+<msg time="2025-03-20T16:13:24.603765" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.603079" elapsed="0.000718"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.604421" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.604043" elapsed="0.000422"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.606336" level="INFO">ตำแหน่งที่ 2: "Sauce Labs Onesie" == "Sauce Labs Onesie" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.604680" elapsed="0.001760"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2025-03-20T16:13:24.601899" elapsed="0.004639"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.607458" level="INFO">${actual} = Sauce Labs Fleece Jacket</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.606988" elapsed="0.000533"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.608334" level="INFO">${expected} = Sauce Labs Fleece Jacket</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.607802" elapsed="0.000593"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.609141" elapsed="0.000514"/>
+</kw>
+<msg time="2025-03-20T16:13:24.609924" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.608680" elapsed="0.001287"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.611069" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.610280" elapsed="0.000912"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.613695" level="INFO">ตำแหน่งที่ 3: "Sauce Labs Fleece Jacket" == "Sauce Labs Fleece Jacket" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.611587" elapsed="0.002212"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2025-03-20T16:13:24.606715" elapsed="0.007173"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.614913" level="INFO">${actual} = Sauce Labs Bolt T-Shirt</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.614377" elapsed="0.000586"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.615549" level="INFO">${expected} = Sauce Labs Bolt T-Shirt</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.615172" elapsed="0.000418"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.616011" elapsed="0.000280"/>
+</kw>
+<msg time="2025-03-20T16:13:24.616410" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.615771" elapsed="0.000669"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.616835" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.616600" elapsed="0.000273"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.618939" level="INFO">ตำแหน่งที่ 4: "Sauce Labs Bolt T-Shirt" == "Sauce Labs Bolt T-Shirt" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.617030" elapsed="0.002315"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2025-03-20T16:13:24.614079" elapsed="0.005368"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.620739" level="INFO">${actual} = Sauce Labs Bike Light</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.620210" elapsed="0.000586"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.621575" level="INFO">${expected} = Sauce Labs Bike Light</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.621036" elapsed="0.000613"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.622589" elapsed="0.000571"/>
+</kw>
+<msg time="2025-03-20T16:13:24.623347" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.622009" elapsed="0.001373"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.624177" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.623588" elapsed="0.000649"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.626003" level="INFO">ตำแหน่งที่ 5: "Sauce Labs Bike Light" == "Sauce Labs Bike Light" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.624449" elapsed="0.001636"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2025-03-20T16:13:24.619734" elapsed="0.006433"/>
+</iter>
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.626896" level="INFO">${actual} = Sauce Labs Backpack</msg>
+<var>${actual}</var>
+<arg>${actual_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.626615" elapsed="0.000318"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-03-20T16:13:24.627357" level="INFO">${expected} = Sauce Labs Backpack</msg>
+<var>${expected}</var>
+<arg>${sorted_names}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.627076" elapsed="0.000317"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.627810" elapsed="0.000254"/>
+</kw>
+<msg time="2025-03-20T16:13:24.628170" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.627554" elapsed="0.000646"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.628563" level="INFO">${result} = ถูกต้อง</msg>
+<var>${result}</var>
+<arg>${status}</arg>
+<arg>ถูกต้อง</arg>
+<arg>ไม่ถูกต้อง</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.628340" elapsed="0.000260"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:24.630021" level="INFO">ตำแหน่งที่ 6: "Sauce Labs Backpack" == "Sauce Labs Backpack" : ถูกต้อง</msg>
+<arg>ตำแหน่งที่ ${index+1}: "${actual}" == "${expected}" : ${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.628738" elapsed="0.001355"/>
+</kw>
+<var name="${index}">5</var>
+<status status="PASS" start="2025-03-20T16:13:24.626340" elapsed="0.003830"/>
+</iter>
+<var>${index}</var>
+<value>0</value>
+<value>${actual_names.__len__()}</value>
+<status status="PASS" start="2025-03-20T16:13:24.593497" elapsed="0.036745"/>
+</for>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${actual_names}</arg>
+<arg>${sorted_names}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.630428" elapsed="0.000414"/>
+</kw>
+<arg>desc</arg>
+<status status="PASS" start="2025-03-20T16:13:24.489540" elapsed="0.141426"/>
+</kw>
+<arg>'${expectedOption}' == 'Name (Z to A)'</arg>
+<arg>Validate Name Sorting</arg>
+<arg>desc</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.488655" elapsed="0.142389"/>
+</kw>
+<arg>Name (Z to A)</arg>
+<status status="PASS" start="2025-03-20T16:13:24.194963" elapsed="0.436177"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-20T16:13:24.631388" elapsed="2.454016"/>
+</kw>
+<status status="PASS" start="2025-03-20T16:13:16.216461" elapsed="10.869140"/>
+</test>
+<test id="s1-s1-t4" name="Validate sidebar" line="32">
+<kw name="Open Browser To Sauce Demo" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:27.087675" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-20T16:13:27.087183" elapsed="2.829408"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-20T16:13:29.918146" elapsed="0.802672"/>
+</kw>
+<status status="PASS" start="2025-03-20T16:13:27.086598" elapsed="3.634595"/>
+</kw>
+<kw name="Fill the login Form" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:30.724372" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:30.722874" elapsed="0.663643"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:31.388161" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:31.387166" elapsed="0.360191"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:31.749182" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:31.748021" elapsed="0.316436"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-03-20T16:13:30.721594" elapsed="1.343604"/>
+</kw>
+<kw name="Validate Sidebar" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:32.069078" level="INFO">Clicking element 'css=.bm-burger-button'.</msg>
+<arg>css=.bm-burger-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-20T16:13:32.067675" elapsed="0.167627"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.bm-menu</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-20T16:13:32.235750" elapsed="0.062786"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-20T16:13:32.365731" level="INFO">Element 'css=.bm-menu' is displayed.</msg>
+<arg>css=.bm-menu</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-20T16:13:32.299955" elapsed="0.066041"/>
+</kw>
+<msg time="2025-03-20T16:13:32.366531" level="INFO">${is_visible} = True</msg>
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>css=.bm-menu</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-03-20T16:13:32.298993" elapsed="0.067601"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${is_visible}</arg>
+<arg>Log</arg>
+<arg>ไม่สามารถเปิด sidebar ได้</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:32.367294" elapsed="0.001072"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-20T16:13:32.370646" level="INFO">เปิด sidebar สำเร็จ</msg>
+<arg>เปิด sidebar สำเร็จ</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-20T16:13:32.369929" elapsed="0.000925"/>
+</kw>
+<arg>${is_visible}</arg>
+<arg>Log</arg>
+<arg>เปิด sidebar สำเร็จ</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-20T16:13:32.368847" elapsed="0.002308"/>
+</kw>
+<status status="PASS" start="2025-03-20T16:13:32.065925" elapsed="0.305426"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-20T16:13:32.371875" elapsed="2.672896"/>
+</kw>
+<status status="PASS" start="2025-03-20T16:13:27.086061" elapsed="7.958827"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-20T16:13:35.045441" elapsed="0.000286"/>
+</kw>
+<status status="PASS" start="2025-03-20T16:12:45.265194" elapsed="49.780597"/>
+</suite>
+<status status="PASS" start="2025-03-20T16:12:45.235675" elapsed="49.810773"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Test">Test</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Inventory">Test.Inventory</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
