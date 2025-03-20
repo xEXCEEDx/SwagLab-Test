@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        ROBOT_PATH = './tests'  // โฟลเดอร์เก็บไฟล์ Robot Framework
-        RESULTS_PATH = './results'  // ที่เก็บผลลัพธ์การทดสอบ
+        ROBOT_PATH = './tests'  // ที่เก็บไฟล์ทดสอบ
+        RESULTS_PATH = './results'  // เก็บผลลัพธ์
     }
 
     stages {
@@ -22,7 +22,7 @@ pipeline {
             }
         }
 
-        stage('Run Robot Tests') {
+        stage('Run Tests') {
             steps {
                 script {
                     sh 'robot --outputdir ${RESULTS_PATH} ${ROBOT_PATH}/*.robot'
@@ -47,10 +47,10 @@ pipeline {
             cleanWs()
         }
         success {
-            echo '✅ Test Passed!'
+            echo '✅ Tests Passed!'
         }
         failure {
-            echo '❌ Test Failed!'
+            echo '❌ Tests Failed!'
         }
     }
 }
