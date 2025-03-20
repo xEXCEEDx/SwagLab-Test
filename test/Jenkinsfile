@@ -10,10 +10,10 @@ pipeline {
         stage('Checkout') {
             steps {
                 // ดึงโค้ดจาก Git (หากใช้ Git)
-                // git 'https://your-repository-url.git'
+                git 'https://github.com/xEXCEEDx/SwagLab-Test.git'
 
                 // หรือหากใช้งานโค้ดที่อยู่ในเครื่อง
-                echo "Using local files"
+                // echo "Using local files"
             }
         }
 
