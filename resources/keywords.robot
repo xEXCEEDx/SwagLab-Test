@@ -4,7 +4,7 @@ Library           Collections
 Library           BuiltIn
 *** Keywords ***
 Open Browser To Sauce Demo
-    Open Browser    ${URL}    ${BROWSER}    options=--headless
+    Open Browser    ${URL}    ${BROWSER}   
     Maximize Browser Window
 
 
