@@ -199,7 +199,7 @@ Remove Product from Cart
 Go to Chackout page
     Select Product to Cart    Sauce Labs Bike Light
     Click element    css=.shopping_cart_link
-    Click button       id=checkout
+    Click button       xpath=//*[@id="checkout"]
     
 Fill the checkout Form
     [Arguments]    ${first_name}    ${last_name}    ${zip_code}
