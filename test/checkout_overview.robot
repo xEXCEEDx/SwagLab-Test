@@ -9,7 +9,10 @@ Resource      ../resources/keywords.robot
 Chackout overview product Complete
     Open Browser To Sauce Demo
     Fill the login Form    ${USERNAME}    ${PASSWORD}
-    Go to Chackout page
+    Select Product to Cart    Sauce Labs Backpack
+    Click element    css=.shopping_cart_link
+    Wait Until Element Is Visible    xpath=//*[@id="checkout"]    timeout=10s
+    Click button       xpath=//*[@id="checkout"]
     Fill the checkout Form  ${FIRST_NAME}    ${LAST_NAME}    ${ZIP_CODE}
     Click Element  xpath=//button[@id='finish']
     Page Should Contain Element    xpath=//h2[normalize-space()='Thank you for your order!']
@@ -19,7 +22,10 @@ Chackout overview product Complete
 Validate price total and tax 
     Open Browser To Sauce Demo
     Fill the login Form    ${USERNAME}    ${PASSWORD}
-    Go to Chackout page
+    Select Product to Cart    Sauce Labs Backpack
+    Click element    css=.shopping_cart_link
+    Wait Until Element Is Visible    xpath=//*[@id="checkout"]    timeout=10s
+    Click button       xpath=//*[@id="checkout"]
     Fill the checkout Form  ${FIRST_NAME}    ${LAST_NAME}    ${ZIP_CODE}
     Check Price total and tex 
     [Teardown]      Close Browser
@@ -27,7 +33,10 @@ Validate price total and tax
 Validate button cancel overview
     Open Browser To Sauce Demo
     Fill the login Form    ${USERNAME}    ${PASSWORD}
-    Go to Chackout page
+    Select Product to Cart    Sauce Labs Backpack
+    Click element    css=.shopping_cart_link
+    Wait Until Element Is Visible    xpath=//*[@id="checkout"]    timeout=10s
+    Click button       xpath=//*[@id="checkout"]
     Fill the checkout Form  ${FIRST_NAME}    ${LAST_NAME}    ${ZIP_CODE}
     Click Element  id=cancel
     Page Should Contain Element    xpath=//div[@id='inventory_container']//div//div[@id='inventory_container']
@@ -36,7 +45,10 @@ Validate button cancel overview
 Validate Chackout complete and go to homepage
     Open Browser To Sauce Demo
     Fill the login Form    ${USERNAME}    ${PASSWORD}
-    Go to Chackout page
+    Select Product to Cart    Sauce Labs Backpack
+    Click element    css=.shopping_cart_link
+    Wait Until Element Is Visible    xpath=//*[@id="checkout"]    timeout=10s
+    Click button       xpath=//*[@id="checkout"]
     Fill the checkout Form  ${FIRST_NAME}    ${LAST_NAME}    ${ZIP_CODE}
     Click Element  xpath=//button[@id='finish']
     Page Should Contain Element    xpath=//h2[normalize-space()='Thank you for your order!']
