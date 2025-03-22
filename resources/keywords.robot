@@ -199,8 +199,9 @@ Remove Product from Cart
 Go to Chackout page
     Select Product to Cart    Sauce Labs Bike Light
     Click element    css=.shopping_cart_link
-    Wait Until Element Is Visible    xpath= (//button[normalize-space()='Checkout'])[1]    timeout=20s
-    Click button       xpath= (//button[normalize-space()='Checkout'])[1]
+    Wait Until Element Exists    xpath=(//button[normalize-space()='Checkout'])[1]    timeout=20s
+    Click Button    xpath=(//button[normalize-space()='Checkout'])[1]
+
     
 Fill the checkout Form
     [Arguments]    ${first_name}    ${last_name}    ${zip_code}
