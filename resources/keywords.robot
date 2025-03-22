@@ -198,9 +198,13 @@ Remove Product from Cart
 
 Go to Chackout page
     Select Product to Cart    Sauce Labs Backpack
-    Click element    xpath=//a[@class='shopping_cart_link']
-    sleep    3s
+    sleep   5s
+    Click element    css=.shopping_cart_link
+    sleep   5s
+    Wait Until Element Is Visible    xpath=//*[@id="checkout"]    timeout=10s
+    sleep   5s
     Click button       xpath=//*[@id="checkout"]
+    sleep   5s
     
     
 Fill the checkout Form
