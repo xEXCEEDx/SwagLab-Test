@@ -199,6 +199,7 @@ Remove Product from Cart
 Go to Chackout page
     Select Product to Cart    Sauce Labs Bike Light
     Click element    css=.shopping_cart_link
+    Wait Until Element Is Visible    xpath=//*[@id="checkout"]    timeout=10s
     Click button       xpath=//*[@id="checkout"]
     
 Fill the checkout Form
