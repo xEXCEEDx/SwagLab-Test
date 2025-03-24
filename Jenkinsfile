@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        // กำหนด path ไปยัง Python และ Robot Framework
-        PYTHON_PATH = 'C:\\Users\\Nutta\\AppData\\Local\\Programs\\Python\\Python313-32'
+        // ใช้ path ที่ติดตั้งบน Jenkins server
+        PYTHON_PATH = 'C:\\Python313'
         ROBOT_PATH = "${PYTHON_PATH}\\Scripts"
     }
 
@@ -12,21 +12,18 @@ pipeline {
             steps {
                 git branch: 'main', 
                 url: 'https://github.com/xEXCEEDx/SwagLab-Test.git',
-                credentialsId: 'github-token'  // หาก repository เป็น private
+                credentialsId: 'github-token'
             }
         }
         
         stage('Setup Environment') {
             steps {
                 script {
-                    // ใช้ full path ในการเรียก pip
-                    bat "\"${ROBOT_PATH}\\pip.exe\" install --upgrade pip"
-                    bat "\"${ROBOT_PATH}\\pip.exe\" install -r requirements.txt"
+                    // ตรวจสอบ Python ก่อนติดตั้ง
+                    bat "\"${ROBOT_PATH}\\python.exe\" --version || echo Python not found"
                     
-                    // ตรวจสอบ version เพื่อยืนยันการติดตั้ง
-                    bat "\"${ROBOT_PATH}\\python.exe\" --version"
-                    bat "\"${ROBOT_PATH}\\pip.exe\" --version"
-                    bat "\"${ROBOT_PATH}\\robot.bat\" --version"
+                    // ติดตั้ง dependencies
+                    bat "\"${ROBOT_PATH}\\pip.exe\" install -r requirements.txt"
                 }
             }
         }
@@ -35,13 +32,10 @@ pipeline {
             steps {
                 script {
                     // ลบผลลัพธ์เก่า (ถ้ามี)
-                    bat 'if exist results rmdir /s /q results'
+                    bat 'if exist results rmdir /s /q results || echo No results to delete'
                     
-                    // รันเทสต์แบบขนานด้วย Pabot โดยใช้ full path
+                    // รันเทสต์แบบขนาน
                     bat "\"${ROBOT_PATH}\\pabot.exe\" --processes 3 --outputdir results test"
-                    
-                    // หรือใช้ robot.bat หากต้องการรันแบบปกติ
-                    // bat "\"${ROBOT_PATH}\\robot.bat\" --outputdir results test\\*.robot"
                 }
             }
         }
@@ -49,10 +43,7 @@ pipeline {
     
     post {
         always {
-            // Archive ผลลัพธ์
             archiveArtifacts artifacts: 'results/**/*', allowEmptyArchive: true
-            
-            // Publish Robot Framework report
             robot outputPath: 'results'
         }
     }
