@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', 
-                url: 'https://your-repository-url.git'
+                url: 'https://github.com/xEXCEEDx/SwagLab-Test.git'
             }
         }
         
