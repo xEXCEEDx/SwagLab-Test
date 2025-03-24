@@ -4,9 +4,9 @@ Library           Collections
 Library           BuiltIn
 *** Keywords ***
 Open Browser To Sauce Demo
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}   
     Maximize Browser Window
-   
+
 
     
 Fill the login Form
@@ -197,9 +197,15 @@ Remove Product from Cart
     Click Button    xpath=//div[contains(@class,'cart_item')][.//div[contains(@class,'inventory_item_name') and normalize-space(text())='${product_name}']]//button[contains(@data-test, 'remove')]
 
 Go to Chackout page
-    Select Product to Cart    Sauce Labs Bike Light
+    Select Product to Cart    Sauce Labs Backpack
+    sleep   5s
     Click element    css=.shopping_cart_link
-    Click button       id=checkout
+    sleep   5s
+    Wait Until Element Is Visible    xpath=//*[@id="checkout"]    timeout=10s
+    sleep   5s
+    Click button       xpath=//*[@id="checkout"]
+    sleep   5s
+    
     
 Fill the checkout Form
     [Arguments]    ${first_name}    ${last_name}    ${zip_code}
