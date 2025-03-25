@@ -26,7 +26,7 @@ pipeline {
         stage('Run Robot Framework Tests') {
             steps {
                 script {
-                    // รัน Robot Framework โดยใช้ pabot (เช่นรันการทดสอบพร้อมกัน 5 กระบวนการ)
+                    // รัน Robot Framework โดยใช้ pabot
                     bat 'pabot --processes 5 --outputdir results "test/*.robot"'
                 }
             }
@@ -35,6 +35,9 @@ pipeline {
         stage('Publish Results') {
             steps {
                 script {
+                    // ตรวจสอบโครงสร้างไฟล์ในโฟลเดอร์ results
+                    bat 'dir results'
+
                     // ระบุ path ของ output.xml ที่อยู่ในไดเรกทอรี results
                     def resultFile = 'results/output.xml'
 
