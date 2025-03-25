@@ -20,40 +20,40 @@ pipeline {
         stage('Run Robot Framework Tests') {
             steps {
                 script {
-                    // Use --output option to specify output XML path explicitly
-                    bat 'pabot --processes 5 --outputdir results --output output.xml "test/*.robot"'
+                    // Run Robot Framework tests with Pabot
+                    bat 'pabot --processes 5 --outputdir results --output output.xml --log log.html --report report.html --xunit xunit.xml "test/*.robot"'
                 }
             }
         }
         stage('Publish Results') {
             steps {
                 script {
-                    // Updated file path and error handling
-                    def resultFile = 'results/output.xml'
+                    // Verify result files exist
+                    def outputFile = 'results/output.xml'
+                    def logFile = 'results/log.html'
+                    def reportFile = 'results/report.html'
+                    def xunitFile = 'results/xunit.xml'
                     
-                    echo "Checking if file exists: ${resultFile}"
+                    // Use Robot Framework plugin for comprehensive reporting
+                    robot outputPath: 'results', 
+                          passThreshold: 100, 
+                          unstableThreshold: 90,
+                          onlyCritical: true
                     
-                    // Improved file existence check
-                    if (fileExists(resultFile)) {
-                        // Use correct path for junit reporting
-                        junit testResults: 'results/output.xml', allowEmptyResults: true
-                        
-                        // Robot Framework Plugin: Publish Robot Framework results
-                        publishRobotResults testResults: 'results/output.xml'
-                        
-                        // Additional logging for debugging
-                        echo "Test results XML file found and processed"
-                    } else {
-                        echo "ERROR: Output file ${resultFile} does not exist!"
-                        // You might want to fail the build if no results are found
-                        error "No test results found"
-                    }
+                    // Additional JUnit reporting for compatibility
+                    junit testResults: 'results/xunit.xml', 
+                         allowEmptyResults: true
                 }
             }
         }
     }
     post {
         always {
+            // Archive all result files
+            archiveArtifacts artifacts: 'results/*', 
+                             allowEmptyArchive: true
+            
+            // Clean workspace after archiving
             cleanWs()
         }
         success {
