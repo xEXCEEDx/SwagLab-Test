@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout โค้ดจาก Git repository โดยระบุ branch ที่ถูกต้อง
+                // Checkout โค้ดจาก Git repository
                 git branch: 'main', url: 'https://github.com/xEXCEEDx/SwagLab-Test.git'
             }
         }
@@ -40,8 +40,14 @@ pipeline {
 
                     // ตรวจสอบว่าไฟล์ output.xml มีอยู่หรือไม่
                     if (fileExists(resultFile)) {
-                        // ใช้ robot publisher เพื่อแสดงผลการทดสอบจากไฟล์ output.xml
-                        robot results: resultFile
+                        // ใช้ robotPublisher แทน robot step และระบุ path ของผลการทดสอบ
+                        publishRobotResults(
+                            outputPath: resultFile,
+                            disableArchive: false,
+                            keepJUnitFiles: false,
+                            junitReport: false,
+                            reportTitle: 'Robot Framework Test Results'
+                        )
                     } else {
                         echo "Output file does not exist!"
                     }
