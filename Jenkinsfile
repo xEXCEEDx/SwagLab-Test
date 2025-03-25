@@ -1,5 +1,3 @@
-// Potential modifications to fix the test results reporting
-
 pipeline {
     agent any
     environment {
@@ -39,6 +37,9 @@ pipeline {
                     if (fileExists(resultFile)) {
                         // Use correct path for junit reporting
                         junit testResults: 'results/output.xml', allowEmptyResults: true
+                        
+                        // Robot Framework Plugin: Publish Robot Framework results
+                        publishRobotResults testResults: 'results/output.xml'
                         
                         // Additional logging for debugging
                         echo "Test results XML file found and processed"
