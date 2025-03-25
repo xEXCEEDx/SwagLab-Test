@@ -26,31 +26,31 @@ pipeline {
         stage('Run Robot Framework Tests') {
             steps {
                 script {
-                    // รัน Robot Framework โดยใช้ pabot
+                    // รัน Robot Framework โดยใช้ pabot (เช่นรันการทดสอบพร้อมกัน 5 กระบวนการ)
                     bat 'pabot --processes 5 --outputdir results "test/*.robot"'
                 }
             }
         }
 
-      stage('Publish Results') {
-    steps {
-        script {
-            // ระบุ path ของ output.xml ที่อยู่ในไดเรกทอรี results
-            def resultFile = 'results/output.xml'
-            
-            // ตรวจสอบว่าไฟล์ output.xml มีอยู่หรือไม่
-            echo "Checking if file exists: ${resultFile}"
+        stage('Publish Results') {
+            steps {
+                script {
+                    // ระบุ path ของ output.xml ที่อยู่ในไดเรกทอรี results
+                    def resultFile = 'results/output.xml'
 
-            if (fileExists(resultFile)) {
-                // ใช้ junit แทน robotPublisher และระบุ path ของผลการทดสอบ
-                junit '**/results/output.xml'  // ใช้คำสั่ง junit เพื่อดูผลการทดสอบ
-            } else {
-                echo "Output file does not exist!"
+                    // ตรวจสอบว่าไฟล์ output.xml มีอยู่หรือไม่
+                    echo "Checking if file exists: ${resultFile}"
+
+                    if (fileExists(resultFile)) {
+                        // ใช้ junit แทน robotPublisher และระบุ path ของผลการทดสอบ
+                        junit '**/results/output.xml'  // ใช้คำสั่ง junit เพื่อดูผลการทดสอบ
+                    } else {
+                        echo "Output file does not exist!"
+                    }
+                }
             }
         }
     }
-}
-
 
     post {
         always {
