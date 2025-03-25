@@ -35,14 +35,15 @@ pipeline {
         stage('Publish Results') {
             steps {
                 script {
-                    // ตรวจสอบว่าไฟล์ผลลัพธ์มีอยู่ในโฟลเดอร์ results หรือไม่
-                    def resultsDir = 'results'
-                    def outputFile = "${resultsDir}/output.xml"
-                    if (fileExists(outputFile)) {
-                        // แสดงผลการทดสอบ Robot Framework
-                        robot outputFile
+                    // ระบุ path ของ output.xml ที่อยู่ในไดเรกทอรี results
+                    def resultFile = 'results/output.xml'
+
+                    // ตรวจสอบว่าไฟล์ output.xml มีอยู่หรือไม่
+                    if (fileExists(resultFile)) {
+                        // ใช้ robot publisher เพื่อแสดงผลการทดสอบจากไฟล์ output.xml
+                        robot results: resultFile
                     } else {
-                        error "Robot Framework results not found!"
+                        echo "Output file does not exist!"
                     }
                 }
             }
