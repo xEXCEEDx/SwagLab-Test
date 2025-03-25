@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        BROWSER = 'chrome'
-        HEADLESS = 'true'
+        BROWSER = 'chrome'         // กำหนดเบราว์เซอร์ที่ใช้
+        HEADLESS = 'true'          // กำหนดให้ใช้โหมด headless
     }
 
     stages {
@@ -26,8 +26,8 @@ pipeline {
         stage('Run Robot Framework Tests') {
             steps {
                 script {
-                    // รัน Robot Framework โดยใช้ pabot
-                    bat 'pabot --processes 5 --outputdir results "test/*.robot"'
+                    // ใช้คำสั่ง pabot เพื่อรัน Robot Framework tests ในโหมด headless
+                    bat 'pabot --processes 5 --outputdir results --variable BROWSER:${BROWSER} --variable HEADLESS:${HEADLESS} "test/*.robot"'
                 }
             }
         }
@@ -55,3 +55,4 @@ pipeline {
         }
     }
 }
+
