@@ -34,8 +34,17 @@ pipeline {
 
         stage('Publish Results') {
             steps {
-                // แสดงผลการทดสอบ Robot Framework
-                robot results
+                script {
+                    // ตรวจสอบว่าไฟล์ผลลัพธ์มีอยู่ในโฟลเดอร์ results หรือไม่
+                    def resultsDir = 'results'
+                    def outputFile = "${resultsDir}/output.xml"
+                    if (fileExists(outputFile)) {
+                        // แสดงผลการทดสอบ Robot Framework
+                        robot outputFile
+                    } else {
+                        error "Robot Framework results not found!"
+                    }
+                }
             }
         }
     }
