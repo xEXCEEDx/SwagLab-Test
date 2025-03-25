@@ -35,18 +35,15 @@ pipeline {
         stage('Publish Results') {
             steps {
                 script {
-                    // ตรวจสอบโครงสร้างไฟล์ในโฟลเดอร์ results
-                    bat 'dir results'
-
                     // ระบุ path ของ output.xml ที่อยู่ในไดเรกทอรี results
                     def resultFile = 'results/output.xml'
-
+                    
                     // ตรวจสอบว่าไฟล์ output.xml มีอยู่หรือไม่
                     echo "Checking if file exists: ${resultFile}"
 
                     if (fileExists(resultFile)) {
-                        // ใช้ junit แทน robotPublisher และระบุ path ของผลการทดสอบ
-                        junit '**/results/output.xml'  // ใช้คำสั่ง junit เพื่อดูผลการทดสอบ
+                        // ใช้ junit เพื่อดูผลการทดสอบจากไฟล์ output.xml
+                        junit '**/results/output.xml'  // ใช้คำสั่ง junit
                     } else {
                         echo "Output file does not exist!"
                     }
@@ -57,7 +54,7 @@ pipeline {
 
     post {
         always {
-            // ทุกครั้งที่ build เสร็จ จะ cleanup workspace
+            // ทุกครั้งที่ build เสร็จ จะทำการ clean workspace
             cleanWs()
         }
         success {
