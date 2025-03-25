@@ -40,14 +40,8 @@ pipeline {
 
                     // ตรวจสอบว่าไฟล์ output.xml มีอยู่หรือไม่
                     if (fileExists(resultFile)) {
-                        // ใช้ robotPublisher แทน robot step และระบุ path ของผลการทดสอบ
-                        publishRobotResults(
-                            outputPath: resultFile,
-                            disableArchive: false,
-                            keepJUnitFiles: false,
-                            junitReport: false,
-                            reportTitle: 'Robot Framework Test Results'
-                        )
+                        // ใช้ junit แทน robotPublisher และระบุ path ของผลการทดสอบ
+                        junit '**/results/output.xml'  // ใช้คำสั่ง junit เพื่อดูผลการทดสอบ
                     } else {
                         echo "Output file does not exist!"
                     }
