@@ -2,58 +2,56 @@ pipeline {
     agent any
 
     environment {
-        // กำหนด path ไปยัง Python และ Robot Framework
-        PYTHON_PATH = 'C:\\Users\\Nutta\\AppData\\Local\\Programs\\Python\\Python313-32'
-        ROBOT_PATH = "${PYTHON_PATH}\\Scripts"
+        BROWSER = 'chrome'
+        HEADLESS = 'true'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', 
-                url: 'https://github.com/xEXCEEDx/SwagLab-Test.git',
-                credentialsId: 'github-token'  // หาก repository เป็น private
+                // Checkout โค้ดจาก Git repository
+                git 'https://github.com/xEXCEEDx/SwagLab-Test.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
                 script {
-                    // ใช้ full path ในการเรียก pip
-                    bat "\"${ROBOT_PATH}\\pip.exe\" install --upgrade pip"
-                    bat "\"${ROBOT_PATH}\\pip.exe\" install -r requirements.txt"
-                    
-                    // ตรวจสอบ version เพื่อยืนยันการติดตั้ง
-                    bat "\"${ROBOT_PATH}\\python.exe\" --version"
-                    bat "\"${ROBOT_PATH}\\pip.exe\" --version"
-                    bat "\"${ROBOT_PATH}\\robot.bat\" --version"
+                    // ติดตั้ง dependencies ที่จำเป็น เช่น Robot Framework และ pabot
+                    bat 'pip install -r requirements.txt'
                 }
             }
         }
-        
-        stage('Run Tests') {
+
+        stage('Run Robot Framework Tests') {
             steps {
                 script {
-                    // ลบผลลัพธ์เก่า (ถ้ามี)
-                    bat 'if exist results rmdir /s /q results'
-                    
-                    // รันเทสต์แบบขนานด้วย Pabot โดยใช้ full path
-                    bat "\"${ROBOT_PATH}\\pabot.exe\" --processes 3 --outputdir results test"
-                    
-                    // หรือใช้ robot.bat หากต้องการรันแบบปกติ
-                    // bat "\"${ROBOT_PATH}\\robot.bat\" --outputdir results test\\*.robot"
+                    // รัน Robot Framework โดยใช้ pabot
+                    bat 'pabot --processes 5 --outputdir results "test/*.robot"'
                 }
+            }
+        }
+
+        stage('Publish Results') {
+            steps {
+                // แสดงผลการทดสอบ Robot Framework
+                robot results
             }
         }
     }
 
     post {
         always {
-            // Archive ผลลัพธ์
-            archiveArtifacts artifacts: 'results/**/*', allowEmptyArchive: true
-            
-            // Publish Robot Framework report
-            robot outputPath: 'results'
+            // ทุกครั้งที่ build เสร็จ จะ cleanup workspace
+            cleanWs()
+        }
+        success {
+            // ถ้า build สำเร็จ
+            echo 'Build Successful!'
+        }
+        failure {
+            // ถ้า build ล้มเหลว
+            echo 'Build Failed!'
         }
     }
 }

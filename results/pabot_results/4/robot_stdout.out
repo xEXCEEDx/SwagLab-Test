@@ -1,7 +1,7 @@
 ==============================================================================
-Test                                                                          
+Suites                                                                        
 ==============================================================================
-Test.checkout Information                                                     
+Suites.checkout Information                                                   
 ==============================================================================
 Validate Chackout product Complete                                    | PASS |
 ------------------------------------------------------------------------------
@@ -13,10 +13,10 @@ Validate Chackout For Non-Fill zipcode                                | PASS |
 ------------------------------------------------------------------------------
 Validate button cancel                                                | PASS |
 ------------------------------------------------------------------------------
-Test.checkout Information                                             | PASS |
+Suites.checkout Information                                           | PASS |
 5 tests, 5 passed, 0 failed
 ==============================================================================
-Test                                                                  | PASS |
+Suites                                                                | PASS |
 5 tests, 5 passed, 0 failed
 ==============================================================================
 Output:  C:\Users\Nutta\Desktop\Learn Robot freamwork\SwagLab\results\pabot_results\4\output.xml

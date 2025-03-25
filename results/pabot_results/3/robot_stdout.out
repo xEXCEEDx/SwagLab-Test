@@ -1,7 +1,7 @@
 ==============================================================================
-Test                                                                          
+Suites                                                                        
 ==============================================================================
-Test.Productcart                                                              
+Suites.Productcart                                                            
 ==============================================================================
 Testing adding and deleting products                                  | PASS |
 ------------------------------------------------------------------------------
@@ -11,10 +11,10 @@ Check Quantity in Basket and Test Deletion                            | PASS |
 ------------------------------------------------------------------------------
 Checks button to continue shopping                                    | PASS |
 ------------------------------------------------------------------------------
-Test.Productcart                                                      | PASS |
+Suites.Productcart                                                    | PASS |
 4 tests, 4 passed, 0 failed
 ==============================================================================
-Test                                                                  | PASS |
+Suites                                                                | PASS |
 4 tests, 4 passed, 0 failed
 ==============================================================================
 Output:  C:\Users\Nutta\Desktop\Learn Robot freamwork\SwagLab\results\pabot_results\3\output.xml

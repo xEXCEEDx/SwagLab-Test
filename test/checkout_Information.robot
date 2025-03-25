@@ -3,7 +3,7 @@ Library           SeleniumLibrary
 Resource      ../resources/variables.robot
 Resource      ../resources/keywords.robot
 # Suite Setup       Open Browser To Sauce Demo
-Suite Teardown    Close Browser
+# Suite Teardown    Close Browser
 
 *** Test Cases ***
 

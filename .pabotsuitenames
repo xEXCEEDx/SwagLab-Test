@@ -1,9 +1,9 @@
-datasources:3f7f823e5567ffbfc6a868e50e84e2f8bb1cfdf4
-commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+datasources:8c216943a876b15ab6e0d5a8c728a3289255d7f3
+commandlineoptions:c79415756a87938172f4269db8b3937c4b39cae2
 suitesfrom:no-suites-from-option
-file:604309cd3b754dfd78814dc0b16dddaac2823b26
---suite Test.Checkout Overview
---suite Test.Inventory
---suite Test.Login
---suite Test.Productcart
---suite Test.checkout Information
+file:33c64e51c0c2c28b5d4fa3f0c16db2956ed53c77
+--suite Suites.Checkout Overview
+--suite Suites.Inventory
+--suite Suites.Login
+--suite Suites.Productcart
+--suite Suites.checkout Information

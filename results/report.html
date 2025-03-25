@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.1.1 (Python 3.13.1 on win32)" name="Generator">
+<meta content="Robot Framework 7.2.2 (Python 3.13.2 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -1328,7 +1328,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1887,22 +1887,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,305088],[[4,5,6,0,[],[1,50,135612],[],[[7,0,0,[],[1,664,26906],[]],[8,0,0,[],[1,27571,27136],[]],[9,0,0,[],[1,54707,27178],[]],[10,0,0,[],[1,81887,27029],[]],[11,0,0,[],[1,108917,26744],[]]],[],[5,5,0,0]],[12,13,14,0,[],[1,135664,108519],[],[[15,0,0,[],[1,135671,27135],[]],[16,0,0,[],[1,162806,27080],[]],[17,0,0,[],[1,189887,27240],[]],[18,0,0,[],[1,217128,27053],[]]],[],[4,4,0,0]],[19,20,21,0,[],[1,244184,27018],[],[[22,0,0,[],[1,244191,6458],[]],[23,0,0,[],[1,250650,6701],[]],[24,0,0,[],[1,257352,7414],[]],[25,0,0,[],[1,264767,6433],[]]],[],[4,4,0,0]],[26,27,28,0,[],[1,271203,24503],[],[[29,0,0,[],[1,271209,6039],[]],[30,0,0,[],[1,277249,6220],[]],[31,0,0,[],[1,283471,6153],[]],[32,0,0,[],[1,289624,6080],[]]],[],[4,4,0,0]],[33,34,35,0,[],[1,295709,9377],[],[[36,0,0,[],[1,295715,4049],[]],[37,0,0,[],[1,299765,2241],[]],[38,0,0,[],[1,302008,320],[]],[39,0,0,[],[1,302329,154],[]]],[],[4,4,0,0]]],[],[],[21,21,0,0]];
+window.output["suite"] = [1,0,0,2,[],[1,0,62287],[[3,4,5,0,[],[1,1766,34530],[],[[6,0,0,[],[1,2283,9537],[]],[7,0,0,[],[1,11821,10032],[]],[8,0,0,[],[1,21853,7559],[]],[9,0,0,[],[1,29412,7403],[]]],[],[4,4,0,0]],[10,11,12,0,[],[1,1806,35681],[],[[13,0,0,[],[1,2296,9291],[]],[14,0,0,[],[1,11587,8310],[]],[15,0,0,[],[1,19898,8824],[]],[16,0,0,[],[1,28723,8764],[]]],[],[4,4,0,0]],[17,18,19,0,[],[1,1766,28409],[],[[20,0,0,[],[1,2269,9397],[]],[21,0,0,[],[1,11667,7393],[]],[22,0,0,[],[1,19060,5576],[]],[23,0,0,[],[1,24636,5537],[]]],[],[4,4,0,0]],[24,25,26,0,[],[1,1806,12652],[],[[27,0,0,[],[1,2290,7256],[]],[28,0,0,[],[1,9547,2193],[]],[29,0,0,[],[1,11741,210],[]],[30,0,0,[],[1,11951,101],[]]],[],[4,4,0,0]],[31,32,33,0,[],[1,1808,39726],[],[[34,0,0,[],[1,2296,9847],[]],[35,0,0,[],[1,12143,10047],[]],[36,0,0,[],[1,22191,7500],[]],[37,0,0,[],[1,29692,7062],[]],[38,0,0,[],[1,36755,4779],[]]],[],[5,5,0,0]]],[],[],[21,21,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Test","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test","*../test","*checkout Information","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test\\checkout_Information.robot","*../test/checkout_Information.robot","*Validate Chackout product Complete","*Validate Chackout For Non-Fill firstname","*Validate Chackout For Non-Fill lastname","*Validate Chackout For Non-Fill zipcode","*Validate button cancel","*Checkout Overview","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test\\checkout_overview.robot","*../test/checkout_overview.robot","*Chackout overview product Complete","*Validate price total and tax","*Validate button cancel overview","*Validate Chackout complete and go to homepage","*Inventory","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test\\inventory.robot","*../test/inventory.robot","*Check login to page Products","*Validate Cards display in the Shopping Page","*Validate SortProduct Dropdown","*Validate sidebar","*Login","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test\\login.robot","*../test/login.robot","*Validate UnSuccesful Login - Valid Credentials","*Validate Succesful Login - Invalid Credentials","*Check for Non-Filling Username","*Check for Non-Filling Password","*Productcart","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test\\productcart.robot","*../test/productcart.robot","*Testing adding and deleting products","*Validate count of products in the cart and delete one","*Check Quantity in Basket and Test Deletion","*Checks button to continue shopping"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Suites","*<p><a href=\"https://pabot.org/?ref=log\">Pabot\x3c/a> result from 5 executions.\x3c/p>","*Checkout Overview","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test\\checkout_overview.robot","*../test/checkout_overview.robot","*Chackout overview product Complete","*Validate price total and tax","*Validate button cancel overview","*Validate Chackout complete and go to homepage","*Inventory","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test\\inventory.robot","*../test/inventory.robot","*Check login to page Products","*Validate Cards display in the Shopping Page","*Validate SortProduct Dropdown","*Validate sidebar","*Login","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test\\login.robot","*../test/login.robot","*Validate UnSuccesful Login - Valid Credentials","*Validate Succesful Login - Invalid Credentials","*Check for Non-Filling Username","*Check for Non-Filling Password","*Productcart","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test\\productcart.robot","*../test/productcart.robot","*Testing adding and deleting products","*Validate count of products in the cart and delete one","*Check Quantity in Basket and Test Deletion","*Checks button to continue shopping","*checkout Information","*C:\\Users\\Nutta\\Desktop\\Learn Robot freamwork\\SwagLab\\test\\checkout_Information.robot","*../test/checkout_Information.robot","*Validate Chackout product Complete","*Validate Chackout For Non-Fill firstname","*Validate Chackout For Non-Fill lastname","*Validate Chackout For Non-Fill zipcode","*Validate button cancel"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:05:02","fail":0,"label":"All Tests","pass":21,"skip":0}],[],[{"elapsed":"00:05:05","fail":0,"id":"s1","label":"Test","name":"Test","pass":21,"skip":0},{"elapsed":"00:02:16","fail":0,"id":"s1-s1","label":"Test.checkout Information","name":"checkout Information","pass":5,"skip":0},{"elapsed":"00:01:49","fail":0,"id":"s1-s2","label":"Test.Checkout Overview","name":"Checkout Overview","pass":4,"skip":0},{"elapsed":"00:00:27","fail":0,"id":"s1-s3","label":"Test.Inventory","name":"Inventory","pass":4,"skip":0},{"elapsed":"00:00:25","fail":0,"id":"s1-s4","label":"Test.Login","name":"Login","pass":4,"skip":0},{"elapsed":"00:00:09","fail":0,"id":"s1-s5","label":"Test.Productcart","name":"Productcart","pass":4,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:02:27","fail":0,"label":"All Tests","pass":21,"skip":0}],[],[{"elapsed":"00:01:02","fail":0,"id":"s1","label":"Suites","name":"Suites","pass":21,"skip":0},{"elapsed":"00:00:35","fail":0,"id":"s1-s1","label":"Suites.Checkout Overview","name":"Checkout Overview","pass":4,"skip":0},{"elapsed":"00:00:36","fail":0,"id":"s1-s2","label":"Suites.Inventory","name":"Inventory","pass":4,"skip":0},{"elapsed":"00:00:28","fail":0,"id":"s1-s3","label":"Suites.Login","name":"Login","pass":4,"skip":0},{"elapsed":"00:00:13","fail":0,"id":"s1-s4","label":"Suites.Productcart","name":"Productcart","pass":4,"skip":0},{"elapsed":"00:00:40","fail":0,"id":"s1-s5","label":"Suites.checkout Information","name":"checkout Information","pass":5,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1742642908435;
+window.output["baseMillis"] = 1742881959550;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 305201;
+window.output["generated"] = 62335;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2354,7 +2354,7 @@ function hideHiddenDetailsColumns(elem) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr onclick="tagDetailSelected('${label}')" class="row-${$item.index}">
-    <td class="stats-col-name" title="{{html doc}}">
+    <td class="stats-col-name" title="${doc}">
       <div class="stat-name">
         <a href="#tags?${label}">{{html label}}</a>
         {{if info}}(${info}){{/if}}
