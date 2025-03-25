@@ -9,8 +9,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout โค้ดจาก Git repository
-                git 'https://github.com/xEXCEEDx/SwagLab-Test.git'
+                // Checkout โค้ดจาก Git repository โดยระบุ branch ที่ถูกต้อง
+                git branch: 'main', url: 'https://github.com/xEXCEEDx/SwagLab-Test.git'
             }
         }
 
